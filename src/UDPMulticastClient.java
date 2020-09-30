@@ -26,7 +26,6 @@ public class UDPMulticastClient implements Runnable {
             System.out.println(pair.getKey());
             if (SECONDS.between((LocalTime)pair.getValue(), LocalTime.now()) >= 30) { //timeout
                 System.out.println(pair.getKey() + "  " + pair.getValue() + "   " + LocalTime.now());
-                //table.remove(pair.getKey());
                 it.remove();
             }
         }
@@ -46,8 +45,6 @@ public class UDPMulticastClient implements Runnable {
             UpdateTable(packet.getSocketAddress().toString().split(":")[0]);
             System.out.println("copies launched : " + table.size());
         }
-        //socket.leaveGroup(group);
-        //socket.close();
     }
 
     @Override
@@ -59,4 +56,3 @@ public class UDPMulticastClient implements Runnable {
         }
     }
 }
-//works when first finishes last
