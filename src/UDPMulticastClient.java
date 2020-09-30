@@ -45,10 +45,6 @@ public class UDPMulticastClient implements Runnable {
             System.out.println("[Multicast UDP message received] >> " + msg);
             UpdateTable(packet.getSocketAddress().toString().split(":")[0]);
             System.out.println("copies launched : " + table.size());
-//            if ("OK".equals(msg)) {
-//                System.out.println("No more message. Exiting : " + msg);
-//                break;
-//            }
         }
         //socket.leaveGroup(group);
         //socket.close();
